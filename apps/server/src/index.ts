@@ -5,7 +5,7 @@ import http from 'http';
 import https from 'https';
 import cookieParser from 'cookie-parser';
 import authRoutes from './routes/auth.routes';
-import { db } from './utils/database';
+// import { db } from './utils/database';
 import { verifyToken } from "./middleware/auth.middleware";
 import userRoutes from './routes/user.routes';
 dotenv.config();
@@ -79,7 +79,7 @@ app.use((err: Error, req: express.Request, res: express.Response, next: express.
 // Initialize database connection and start server
 const startServer = async () => {
   try {
-    await db.connect();
+    // await db.connect();
     httpServer.listen(port, () => {
       console.log(`✅ Server is running on port ${port}`);
     });
@@ -92,13 +92,13 @@ const startServer = async () => {
 // Handle graceful shutdown
 process.on('SIGTERM', async () => {
   console.log('SIGTERM received. Shutting down gracefully...');
-  await db.disconnect();
+  // await db.disconnect();
   process.exit(0);
 });
 
 process.on('SIGINT', async () => {
   console.log('SIGINT received. Shutting down gracefully...');
-  await db.disconnect();
+  // await db.disconnect();
   process.exit(0);
 });
 

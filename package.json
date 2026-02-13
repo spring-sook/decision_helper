@@ -3,8 +3,21 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "pnpm --filter web dev",
-    "build": "pnpm --filter web build"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:web": "turbo dev --filter=web --filter=server",
+    "dev:admin": "turbo dev --filter=admin --filter=server",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types"
   },
-  "packageManager": "pnpm@10.11.0"
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.6",
+    "typescript": "5.9.2"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=18"
+  }
 }
