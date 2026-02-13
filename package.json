@@ -1,0 +1,10 @@
+{
+  "name": "practice1",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build"
+  },
+  "packageManager": "pnpm@10.11.0"
+}
